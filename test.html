@@ -1,39 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
-  <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
-    <title>NuCamp: A Better Way To Camp</title>
-</head>
+<html>
+
 <body>
-    <div class="container-fluid">
-        <form>
-          <div class="form-group row">
-            <label for="colors" class="col-sm-4 col-form-label">Color</label>
-            <div class="col-sm-4">
-              <select data-target='#color' name="colors" id="colors" class="form-control">
-                <option selected>Select...</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="red">Red</option>
-              </select>
-            </div>
-          </div>
-      <!-- Above this is the section for you to edit -->
-          <div class="form-group row">
-            <div class="col">
-              <button type="button" class="btn btn-primary" onclick="changeColor()">Go</button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-      <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <div id="listOfStudents" class="d-none">Monika,Erik,Ashraf,Charles,Phareth,Leo,Kris,Neha,Tuvache,Victoria</div>
+  <br>
+  <button onclick="main()">Create List</button>
+
+  <br>
+  <div id="body">
+  </div>
+  <script>
+let list = document.getElementById("listOfStudents").innerHTML.split(',');
+list.sort();
+function main(){
+  let oneWord = '';
+      for(var i = 0; i < list.length -1; i++){
+          oneWord += list[i] + ", "
+      }
+  oneWord += list[list.length-1];
+document.getElementById("body").innerHTML = oneWord;
+      }
+
+  </script>
 </body>
+
 </html>
